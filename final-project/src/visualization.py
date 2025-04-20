@@ -31,3 +31,5 @@ plt.suptitle("3D Scatter: True vs Predicted Labels", fontsize=16)
 plt.tight_layout()
 plt.show()
 
+plt.savefig("plots/3d_true_vs_predicted.png")
+
