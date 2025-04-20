@@ -86,7 +86,7 @@ best_model.fit(
 
 # save the trained best model
 import joblib
-joblib.dump(best_model, "best_xgb_model.pkl")
+joblib.dump(best_model, "models/best_xgb_model.pkl")
 
 
 y_pred_proba = best_model.predict_proba(X_test)[:, 1]
