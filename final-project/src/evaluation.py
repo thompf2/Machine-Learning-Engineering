@@ -6,6 +6,8 @@ plt.ylabel("True Label")
 plt.title("Confusion Matrix")
 plt.show()
 
+plt.savefig("plots/confusion_matrix.png")
+
 # feature importance visualization
 feature_importance = best_model.feature_importances_
 plt.figure(figsize=(8, 5))
@@ -14,6 +16,8 @@ plt.xlabel("Feature Importance Score")
 plt.ylabel("Features")
 plt.title("XGBoost Feature Importance")
 plt.show()
+
+plt.savefig("plots/feature_importance.png")
 
 # extract values from confusion matrix
 TN, FP, FN, TP = conf_matrix.ravel()
@@ -29,3 +33,4 @@ print(f"True Defect Rate: {TrueDefectRate:.4f}")
 print(f"False Defect Rate: {FalseDefectRate:.4f}")
 print(f"True Non-Defect Rate: {TrueNonDefectRate:.4f}")
 print(f"False Non-Defect Rate: {FalseNonDefectRate:.4f}")
+
