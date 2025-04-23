@@ -6,6 +6,8 @@ Overview
 This project focuses on detecting defects in additive manufcatured objects, specifically 3D printed, using machine learning. XGBoost is leveraged to identify defects using point cloud data, aiming to improve the quality control process in manufacturing.
 
 
+
+
 Folders
 
 models/: Contains the trained model saved as a .pkl file.
@@ -15,6 +17,9 @@ plots/: Contains visualizations generated during model evaluation (e.g., confusi
 results/: Contains evaluation metrics and results saved as text files.
 
 src/: Contains the source code files for different stages of the project (e.g., preprocessing, training, and evaluation).
+
+
+
 
 
 Results
