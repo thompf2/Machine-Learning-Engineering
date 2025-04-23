@@ -24,6 +24,7 @@ plt.xlabel("Predicted Label")
 plt.ylabel("True Label")
 plt.title("Confusion Matrix")
 plt.show()
+plt.savefig("plots/confusion_matrix.png")
 
 # feature importance visualization
 feature_importance = best_model.feature_importances_
@@ -33,6 +34,7 @@ plt.xlabel("Feature Importance Score")
 plt.ylabel("Features")
 plt.title("XGBoost Feature Importance")
 plt.show()
+plt.savefig("plots/feature_importance.png")
 
 # extract values from confusion matrix
 TN, FP, FN, TP = conf_matrix.ravel()
@@ -77,7 +79,18 @@ ax2.set_title("Predicted Defect Labels")
 ax2.set_xlabel("X")
 ax2.set_ylabel("Y")
 ax2.set_zlabel("Z")
+plt.savefig("plots/comparison_plots.png")
 
+
+with open("results/metrics.txt", "w") as f:
+    f.write(f"Optimized Threshold (Weighted Recall): {best_threshold:.4f}\n")
+    f.write(f"Accuracy: {accuracy:.4f}\n")
+    f.write(f"Confusion Matrix:\n{conf_matrix}\n")
+    f.write(f"Classification Report:\n{class_report}\n")
+    f.write(f"True Defect Rate: {TrueDefectRate:.4f}\n")
+    f.write(f"False Defect Rate: {FalseDefectRate:.4f}\n")
+    f.write(f"True Non-Defect Rate: {TrueNonDefectRate:.4f}\n")
+    f.write(f"False Non-Defect Rate: {FalseNonDefectRate:.4f}\n")
 plt.suptitle("3D Scatter: True vs Predicted Labels", fontsize=16)
 plt.tight_layout()
 plt.show()
